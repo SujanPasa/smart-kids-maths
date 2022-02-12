@@ -1,0 +1,12 @@
+Selected: 1462 
+Correct Answer: 2030 
+Selected: 1462 
+Correct Answer: 1462
+
+Problem : 
+correct answer is not redefined for next quection
+
+Solution: 
+adding unbind method in answercheck class 
+
+

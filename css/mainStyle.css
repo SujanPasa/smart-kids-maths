@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Pushster&family=Roboto+Slab&display=swap');
+
+/* import guide
+font-family: 'Playfair Display', serif;
+font-family: 'Pushster', cursive;
+font-family: 'Roboto Slab', serif; */
+
+body{
+	margin: 0;
+	padding: 0;
+	background-image: url("../images/desktopBG.jpg");
+	/* background-size: cover; */
+	background-repeat: no-repeat;
+	font-size:18px;
+}
+
+/* .main{
+	width: 95%;
+	margin: auto auto;
+} */
+.game-info h1{
+	margin: 0rem auto 0.05rem auto;
+}
+
+.game-info h2{
+	margin: -0.15rem auto .10rem auto;
+}
+
+.counter, .rank{
+	font-size: 1.25em;
+}
+
+.header-content > div{
+	width: 90%;
+	margin: auto;
+}
+
+.container{
+	width: 90%;
+	margin: auto auto;
+	margin: 3px solid blue;
+
+}
+
+header{
+	margin-top: 2rem;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	justify-content: center;
+	align-content: center;
+	border: 1px solid red;
+	text-align: center;
+}
+
+.game-name{
+	font-family:'Pushster', cursive; 
+	font-weight: bold;
+	font-size: 3em;
+	/* color: hotpink; */
+	color: #000;
+	text-decoration: underline;
+}
+
+.player-name{
+
+	margin-top:.75rem;
+	font-family:'Playfair Display', serif;
+	font-size:2em;
+	font-weight: bold;
+	color: rgb(22, 22, 22);
+}
+
+.game-section{
+	border: 1px solid blue;
+	margin-top:2rem;
+	font-size: 1.25em;
+	font-family:'Roboto Slab', serif;
+	border-radius: 0.5rem;
+	padding: 1rem 1rem;
+	padding: 1rem 1.5rem;
+	
+
+}
+
+.question-section{
+	padding: 0.75rem;
+	text-align: center;
+	font-size:bolder;
+
+}
+
+.gray-bg{
+	background-color: rgba(255, 248, 248, 0.842);
+	
+}
+.answer-section{
+	margin-top:1.5rem;
+	display:flex;
+	flex-direction: row;
+	gap: 2rem;
+	justify-content: space-evenly;
+	font-size:2em;
+	flex-wrap: wrap;
+}
+
+.answer{
+	
+	width: 90%;
+	border: 1px solid black;
+	border-radius:0.5rem;
+	text-align: center;
+}
+
+.next-question, .answer-check-btn{
+	font-family:'Pushster', cursive; 
+	text-align: center;
+	font-size:2.5em;
+	width: 90%;
+	margin: 1.5rem auto;
+	border: 1px solid black;
+	border-radius:0.5rem;
+	text-align: center;
+	padding-top: .5rem;
+	padding-bottom:.5rem;
+	margin-bottom:2rem;
+}
+
+.btn{
+	border:5px solid hotpink;
+	border-style: outset;
+	background-color: rgba(255, 218, 224, 0.993);
+}
+
+.btn:hover{
+	background-color: lightskyblue;
+}
+
+.hidden{
+	display:none;
+}
+
+.selected{
+	background-color: yellow;
+}
+
+
+.selected:hover{
+	background-color: yellow;
+}
+
+.correct-selected{
+	background-color: rgb(8, 233, 8);
+	color: #fff;
+}
+
+.wrong-selected{
+	background-color: red;
+	color: #fff;
+}
+
+.result-true{
+	color: blue;
+}
+
+.result-false{
+	color: red;
+}
+
+
+@media only screen and (min-width: 1000px) {
+
+	header{
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	
+	}
+
+	.header-content{
+		min-width: 30%;
+	}
+
+	.counter,.rank{
+		font-size: 1.5em;
+
+	}
+	
+	.answer-section{
+		flex-wrap: wrap;
+	}
+
+	.answer{
+		max-width: 40%;
+	}
+
+	.question-section{
+		text-align: center;
+		font-size:1.5em;
+	}
+
+	.smaller-btn{
+		max-width: 40%;
+	}
+
+	.game-section{
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+  }
