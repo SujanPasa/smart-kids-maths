@@ -12,6 +12,7 @@ body{
 	/* background-size: cover; */
 	background-repeat: no-repeat;
 	font-size:18px;
+	background-attachment: fixed;
 }
 
 /* .main{
