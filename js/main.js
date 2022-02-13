@@ -213,6 +213,10 @@ function mainFunction(){
             addGame();
             console.log("Game Type: " + gameType);
             break;
+         case "Substract":
+            substractGame();
+            console.log("Game Type: " + gameType);
+            break;
         default:
             console.log("No game time found");
             break;
@@ -251,8 +255,8 @@ function divideGame(){
 }
 
 function addGame(){
-    let firstNumber = randomNumberGeneratorForLargerNumber(5000,2000);
-    let secondNumber = randomNumberGeneratorForLargerNumber(5000,2000);
+    let firstNumber = randomNumberGeneratorForLargerNumber(8000,2000);
+    let secondNumber = randomNumberGeneratorForLargerNumber(8000,2000);
     let correctAnswer = firstNumber + secondNumber;
 
     console.log("First: " + firstNumber);
@@ -272,5 +276,42 @@ function addGame(){
     addSelectedClass();
     answerCheck(correctAnswer);
     nextQuestion();
+
+}
+
+function substractGame(){
+    let larger, smaller;
+
+    let firstNumber = randomNumberGeneratorForLargerNumber(8000,2000);
+    let secondNumber = randomNumberGeneratorForLargerNumber(8000,2000);
+
+    if(firstNumber > secondNumber){
+        larger = firstNumber;
+        smaller = secondNumber;
+    }else{
+        larger = secondNumber;
+        smaller = firstNumber;
+    }
+
+    let correctAnswer = larger - smaller;
+    console.log("First: " + larger);
+    console.log("Second: " + smaller);
+    console.log("CA: " + correctAnswer);
+
+    let initialAnswerArray = wrongAnswerOperation(correctAnswer);
+    console.log("initialArray: " + initialAnswerArray);
+
+    let question = "What is the result of " + smaller + " substracted from " + larger + " ?";
+    $(".question-section").text(question);
+ 
+    //initalAnswerArray is passed as arr 
+    let suffledArray = answerSuffle(initialAnswerArray);
+    console.log(suffledArray);
+    setAnswerKeys(suffledArray);
+    addSelectedClass();
+    answerCheck(correctAnswer);
+    nextQuestion();
+
+
 
 }
