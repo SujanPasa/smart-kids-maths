@@ -26,10 +26,14 @@ body{
 	margin: -0.15rem auto .10rem auto;
 }
 
-.counter, .rank{
+.counter, .rank, .accuracy{
 	font-size: 1.25em;
 }
 
+.header-content{
+	display: flex;
+	flex-direction: column;
+}
 .header-content > div{
 	width: 90%;
 	margin: auto;
@@ -185,9 +189,10 @@ a{
 
 	.header-content{
 		min-width: 30%;
+	
 	}
 
-	.counter,.rank{
+	.counter,.rank,.accuracy{
 		font-size: 1.5em;
 
 	}
