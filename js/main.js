@@ -1,14 +1,31 @@
+
+mainFunction();
+
 var totalAttempt = 0;
 var correctAttempt = 0;
 
-function randomNumberGeneratorMoreThan20(noOfDigits){
-    let randomNumber = Math.floor(Math.random()*noOfDigits + 1);
-    if(randomNumber < 20 ){
+//Generates random number greater than 20 and upto the parameter passed (noOfDigits)
+function randomNumberGeneratorMoreThan20(numberLimit, greaterThan){
+    if(greaterThan === undefined){
+        var greaterThan = 20;
+    }
+    let randomNumber = Math.floor(Math.random()*numberLimit + 1);
+    if(randomNumber < greaterThan ){
         randomNumber += 10;
     }
     return(randomNumber);
 }
 
+function randomNumberGeneratorForLargerNumber(numberLimit, greaterThan){
+    if(greaterThan === undefined){
+        var greaterThan = 200; 
+    }
+    let randomNumber = Math.floor(Math.random()*numberLimit + 1);
+    if(randomNumber < greaterThan ){
+        randomNumber += 100; //will produce number atleast 101
+    }
+    return(randomNumber);
+}
 
 function wrongAnswerOperation(correctAnswer){
 
@@ -142,10 +159,10 @@ function nextQuestion(){
 
 function multiplyGame(){
     let firstNumber = randomNumberGeneratorMoreThan20(99);
-    let secondNumer = randomNumberGeneratorMoreThan20(99);
+    let secondNumber = randomNumberGeneratorMoreThan20(99);
     console.log("First: " + firstNumber);
-    console.log("Second: " + secondNumer);
-    let correctAnswer = firstNumber * secondNumer;
+    console.log("Second: " + secondNumber);
+    let correctAnswer = firstNumber * secondNumber;
 
     // let option2 = wrongAnswerOperation(correctAnswer);
     // let option3 = wrongAnswerOperation(correctAnswer);
@@ -161,7 +178,7 @@ function multiplyGame(){
     let initialAnswerArray = wrongAnswerOperation(correctAnswer);
     console.log("initialArray: " + initialAnswerArray);
 
-    let question = "What is the MULTIPLY result of " + firstNumber + " and " + secondNumer + ".";
+    let question = "What is the MULTIPLY result of " + firstNumber + " and " + secondNumer + "?";
     $(".question-section").text(question);
  
     //initalAnswerArray is passed as arr 
@@ -188,10 +205,43 @@ function mainFunction(){
             multiplyGame();
             console.log("Game Type: " + gameType);
             break;
+        case "Divide":
+            divideGame();
+            console.log("Game Type: " + gameType);
+            break;
         default:
             console.log("Default Exit");
             break;
     }
 }
 
-mainFunction();
+
+//Division Program Section
+
+function divideGame(){
+    let firstNumber = randomNumberGeneratorMoreThan20(99);
+    let secondNumber = randomNumberGeneratorForLargerNumber(500,200);
+
+    let dividend = firstNumber * secondNumber;
+    let divisior = firstNumber;
+    let correctAnswer = secondNumber;
+
+    console.log("First: " + firstNumber);
+    console.log("Second: " + secondNumber);
+    console.log("CA: " + correctAnswer);
+
+    let initialAnswerArray = wrongAnswerOperation(correctAnswer);
+    console.log("initialArray: " + initialAnswerArray);
+
+    let question = "What is the result of " + dividend + " divided by " + divisior + "?";
+    $(".question-section").text(question);
+ 
+    //initalAnswerArray is passed as arr 
+    let suffledArray = answerSuffle(initialAnswerArray);
+    console.log(suffledArray);
+    setAnswerKeys(suffledArray);
+    addSelectedClass();
+    answerCheck(correctAnswer);
+    nextQuestion();
+
+}
