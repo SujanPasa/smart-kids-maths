@@ -22,7 +22,7 @@ function randomNumberGeneratorForLargerNumber(numberLimit, greaterThan){
     }
     let randomNumber = Math.floor(Math.random()*numberLimit + 1);
     if(randomNumber < greaterThan ){
-        randomNumber += 100; //will produce number atleast 101
+        randomNumber += greaterThan *0.75;
     }
     return(randomNumber);
 }
@@ -209,8 +209,12 @@ function mainFunction(){
             divideGame();
             console.log("Game Type: " + gameType);
             break;
+        case "Add":
+            addGame();
+            console.log("Game Type: " + gameType);
+            break;
         default:
-            console.log("Default Exit");
+            console.log("No game time found");
             break;
     }
 }
@@ -234,6 +238,31 @@ function divideGame(){
     console.log("initialArray: " + initialAnswerArray);
 
     let question = "What is the result of " + dividend + " divided by " + divisior + "?";
+    $(".question-section").text(question);
+ 
+    //initalAnswerArray is passed as arr 
+    let suffledArray = answerSuffle(initialAnswerArray);
+    console.log(suffledArray);
+    setAnswerKeys(suffledArray);
+    addSelectedClass();
+    answerCheck(correctAnswer);
+    nextQuestion();
+
+}
+
+function addGame(){
+    let firstNumber = randomNumberGeneratorForLargerNumber(5000,2000);
+    let secondNumber = randomNumberGeneratorForLargerNumber(5000,2000);
+    let correctAnswer = firstNumber + secondNumber;
+
+    console.log("First: " + firstNumber);
+    console.log("Second: " + secondNumber);
+    console.log("CA: " + correctAnswer);
+
+    let initialAnswerArray = wrongAnswerOperation(correctAnswer);
+    console.log("initialArray: " + initialAnswerArray);
+
+    let question = "What is the result of " + firstNumber + " added to " + secondNumber + " ?";
     $(".question-section").text(question);
  
     //initalAnswerArray is passed as arr 
