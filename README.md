@@ -1,8 +1,7 @@
 # Smart Kids (Maths)
 ![Desktop Design](./output/desktop.png)
 
-<img src="./output/mobileHome.png" width = "30%">
-<img src="./output/mobile1.png" width = "30%">
+<img src="./output/mobileHome.png" width ="30%">
 <img src="./output/mobile2.png" width = "30%">
 
 ## Description:
