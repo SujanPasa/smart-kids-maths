@@ -1,7 +1,7 @@
 # Smart Kids (Maths)
 ![Desktop Design](./output/desktop.png)
 
-<img src="./output/mobileHome.png" width ="40%">
+<img src="./output/mobile1.png" width = "40%">&nbsp;
 <img src="./output/mobile2.png" width = "40%">
 
 ## Description:
@@ -13,7 +13,7 @@ During lockdown my younger sister age 10 was attendng online class and not able 
 ## Technologies Used:
 - HTML
 - css
-- Javascript (jQuery)
+- Javascript
 
 ## How it works
 Random numbers are generated for each qustions and based on correct answer wrong answers are generated which are then placed randomly in the answer section. On choosing a answer and after checking it will show if you have choosen correct or wrong answer and also update the accuracy, number of total question attemped and correct attempts
