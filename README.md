@@ -1,8 +1,9 @@
 # Smart Kids (Maths)
 ![Desktop Design](./output/desktop.png)
 
-<img src="./output/mobile1.png" width = "40%">&nbsp;
-<img src="./output/mobile2.png" width = "40%">
+<img src="./output/mobileHome.png" width = "30%">&nbsp;
+<img src="./output/mobile1.png" width = "30%">&nbsp;
+<img src="./output/mobile2.png" width = "30%">
 
 ## Description:
 Smart kids is a educational game that is built for primary level children to engage them in educational materials in free time to keep practising.
